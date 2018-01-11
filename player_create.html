@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cricket</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+
+  <!-- Form validation-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+  <style>
+      body{
+        height: 1000px;
+        margin-top: 52px;
+        font-family: 'Cabin', sans-serif;
+        background-color: #0a1301;
+      }
+      .container{
+        background: #3ea28b;
+        padding: 10px;
+      }
+      label.error{
+        position: absolute;
+        background-color: white;
+        padding: 3px;
+        border-radius: 3px;
+        right:0;
+        color: red;
+        text-transform: uppercase;
+      }
+  </style>
+</head>
+<body style="">
+<div class="container">
+      <h3>Create Player</h3>
+      <hr/>
+      <form action="#">
+        <div class="form-group">
+        <label for="player_name">Player Name <span style="color:red">*</span>:</label>
+        <input type="text" class="form-control" id="player_name" placeholder="Enter Team Name" name="player_name" >
+        </div>
+        <div class="form-group">
+        <label for="team_id">Team <span style="color:red">*</span>:</label>
+        <select class="form-control" id="team_id" name="team_id">
+            <option value="">-Select Team-</option>
+            <option value="1">TKM</option>
+            <option value="2">UJP</option>
+            <option value="3">KAR</option>
+        </select>
+        </div>
+        <button type="submit" name="submit" class="btn btn-default">ADD PLAYER</button>
+      </form>
+</div>
+<script>
+$("form").validate({
+    rules: {
+        player_name: {
+            required: true
+        },
+        team_id: {
+            required: true
+        }
+    },
+    messages:{
+
+    },
+    submitHandler: function(form) {
+        form.submit();
+    }
+});
+</script>
+</body>
+</html>
